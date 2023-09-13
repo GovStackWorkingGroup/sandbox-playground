@@ -35,7 +35,8 @@ import { ReactComponent as SaveIcon } from '@assets/icons/save.svg';
                 bankName: '',
                 financialModality: '',
             },
-            packages: []
+            packages: [],
+            relative: null
         });
 
     const handleBack = () => {
@@ -65,7 +66,7 @@ import { ReactComponent as SaveIcon } from '@assets/icons/save.svg';
       }
 
     const steps = [
-        { title: 'Personal Information', description: 'Personal Information', component: <PersonalInformationEdit candidatei={candidate}newCandidate setCandidateData={updateData} handleContinue={handleContinue} handleBack={handleBack} /> },
+        { title: 'Personal Information', description: 'Personal Information', component: <PersonalInformationEdit candidatei={candidate} newCandidate setCandidateData={updateData} handleContinue={handleContinue} handleBack={handleBack} /> },
         { title: 'Bank Information', description: 'Bank Information',  component: <BankInformationEdit candidatei={candidate} setCandidateData={updateData} handleContinue={handleContinue} handleBack={handleBack}/>},
         { title: 'Candidate Preview', description: 'Preview',  component: <CandidatePreview candidate={candidate} handleContinue={createCandidate} handleBack={handleBack}/>}
     ];
@@ -95,7 +96,7 @@ import { ReactComponent as SaveIcon } from '@assets/icons/save.svg';
                   variant="outline"
                   gap="20px"
                 >
-                  <Button as={Link} to="/driver-poc" w="100%">
+                  <Button as={Link} to="/driver-poc/candidates" w="100%">
                     Candidate list
                   </Button>
                   <Button as={Link} to={"/driver-poc/candidate/"+createdCandidateId} w="100%">

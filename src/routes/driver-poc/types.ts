@@ -3,6 +3,7 @@ export namespace DriverPOC {
     id: number;
     person: Person;
     packages: Package[];
+    relative: DriverPOC.Candidate | null;
   }
 
   export interface Beneficiary extends PaymentInformation {

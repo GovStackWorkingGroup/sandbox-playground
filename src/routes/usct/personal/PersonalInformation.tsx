@@ -23,8 +23,7 @@ const isRegistryAdministrator = getRole() === "ROLE_REGISTRY_ADMINISTRATION";
   return (
     <Flex gap="24px" direction="column">
       <Flex>
-          {(newCandidate)?(<Heading mb="40px">New Candidate</Heading>):""}
-          <Heading fontSize="18px">Candidate Information</Heading>
+          {(newCandidate)?(<Heading mb="40px">New Candidate</Heading>):(<Heading fontSize="18px">Candidate Information</Heading>)}
           <Spacer/>
           {(isRegistryAdministrator && !newCandidate)?(
           <Button onClick={() => navigate(`/driver-poc/candidate/edit/personalInformation/${id.id}`, {state: {newCandidate: false}})} variant="outline" colorScheme="admin" w="180px" leftIcon={<EditIcon />}>

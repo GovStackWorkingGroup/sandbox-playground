@@ -48,7 +48,8 @@ export default function PersonalInformationEdit({
       bankName: '',
       financialModality: '',
     },
-    packages: []
+    packages: [],
+    relative: null
     });
 
     const [enabled, setEnabled] = useState(false);
@@ -93,8 +94,8 @@ export default function PersonalInformationEdit({
   return (
     <Flex gap="24px" direction="column">
         <>
-     {!candidate?(<Heading mb="40px">New Candidate</Heading>):""}
-          <Heading fontSize="18px">{candidate?"Candidate Information":"Applicant information"}</Heading>
+     {newCandidate?(<Heading mb="40px">New Candidate</Heading>):""}
+          <Heading fontSize="18px">{newCandidate?"Candidate Information":"Applicant information"}</Heading>
         <Flex gap="40px"direction={{ base: 'column', xl: 'row' }}>
         <Avatar
           borderRadius="8px"
@@ -149,7 +150,7 @@ export default function PersonalInformationEdit({
               <Text fontWeight="600">Phone Number</Text>
               {simulation && <SimulationIcon height="20px" width="20px" />}
             </Flex>
-            <Input type="number" name="phoneNumber" placeholder="Phone Number" onChange={(e) => updateData(e)} defaultValue={candidatei?candidatei.person.phoneNumber:candidate.person.phoneNumber} />
+            <Input name="phoneNumber" placeholder="Phone Number" onChange={(e) => updateData(e)} defaultValue={candidatei?candidatei.person.phoneNumber:candidate.person.phoneNumber} />
           </Box>
           <Box>
             <Text fontWeight="600">Email Address</Text>
